@@ -7,6 +7,8 @@ class Topic(models.Model):
         """Return a string representation of the model."""
         return self.text
     #Each entry must be tied or associated to and with a certain topic.[this a many-one relationship]
+
+    
 class Entry(models.Model): # This class defines the kind of entries that are going to be made.
     topic = models.ForeignKey(Topic, on_delete = models.CASCADE)
     # . This is the code that connects each entry to a specific topic. Each topic is assigned a key, or ID, when it’s created. When Django needs to establish a connection between two pieces of data, it uses the key associated with each piece of information
